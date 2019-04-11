@@ -5,6 +5,7 @@ import java.util.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.context.annotation.Scope;
 
 import com.mahendra.model.Customer;
@@ -15,6 +16,8 @@ import com.mahendra.repos.CustomerRepository;
 @Configuration 
 //Enable Annotations and Autowiring
 @ComponentScan("com.mahendra")
+@EnableAspectJAutoProxy // Request AspectJ runtime and weaver 
+						// to build proxies for all targeted beans
 public class AppConfig {
 	
 	@Bean

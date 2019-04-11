@@ -4,6 +4,7 @@ import java.util.*;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Lazy;
 
 import com.mahendra.model.Customer;
 import com.mahendra.repos.CustomerRepository;

@@ -1,5 +1,8 @@
 package com.mahendra.services;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -28,5 +31,15 @@ public class CustomerService {
 
 	public CustomerRepository getRepository() {
 		return repository;
+	}
+	
+	@PostConstruct
+	public void doSomethingBefore() {
+		System.out.println("Just after DI");
+	}
+	
+	@PreDestroy
+	public void doSomethingAtLastMinute() {
+		System.out.println("Object about to get destoyed!");
 	}
 }

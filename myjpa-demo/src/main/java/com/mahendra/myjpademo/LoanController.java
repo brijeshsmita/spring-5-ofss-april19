@@ -17,8 +17,8 @@ public class LoanController {
 	@Autowired private LoanService service;
 	
 	@GetMapping(produces= {"application/json","application/xml"})
-	public Loan findLoan(@RequestParam String acc) {
-		return service.findByAccountNumber(acc);
+	public ResponseEntity<Loan> findLoan(@RequestParam String acc) {
+		return new ResponseEntity<>(service.findByAccountNumber(acc),HttpStatus.OK);
 	}
 	
 	@PostMapping(consumes= {"application/json"})

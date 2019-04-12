@@ -1,10 +1,13 @@
 package com.mahendra.myjpademo;
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlRootElement;
+
 import java.util.Date;
 
 @Entity
 @Table(name="loans")
+@XmlRootElement(name="loans")
 public class Loan {
 
 	@Id
